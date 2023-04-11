@@ -62,7 +62,6 @@ class Graph:
                     if int(line[j]) > 0:
                         self.add_edge(i - 1, j, int(line[j]))
 
-
 if __name__ == "__main__":
     g = Graph(8)
     g.read_from_file("data")
