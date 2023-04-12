@@ -1,3 +1,5 @@
+from colorama import Fore,Style
+
 def bfs(graph, s, t, parent):
     visited = [False] * len(graph)
     queue = []
@@ -37,17 +39,17 @@ def ford_fulkerson(graph, source, sink):
             v = parent[v]
 
             # Виводимо ребро та його вагу, яке було змінено
-            print("Змінено ребро ({}, {}) з вагою {} на {}".format(u, v, graph[v][u] + path_flow, graph[v][u]))
+            print(Fore.LIGHTRED_EX,"Змінено ребро ({}, {}) з вагою {} на {}".format(u, v, graph[v][u] + path_flow, graph[v][u]))
 
         # Виводимо максимальний потік на даний момент
-        print("Максимальний потік на даний момент: {}".format(max_flow))
+        print(Fore.LIGHTGREEN_EX,"\nМаксимальний потік на даний момент: {}".format(max_flow),"\n")
 
     # Виводимо кінцевий результат
-    print("Максимальний потік в графі: {}".format(max_flow))
+    print("Максимальний потік в графі: {}".format(max_flow),"\n",Style.RESET_ALL)
 
 
 # Зчитування матриці з файлу
-with open("data", "r") as f:
+with open("4_Lab/data", "r") as f:
     n = int(f.readline().strip())
     graph = []
     for i in range(n):

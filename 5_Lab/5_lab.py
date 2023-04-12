@@ -1,5 +1,5 @@
 from itertools import permutations
-from colorama import Fore
+from colorama import Fore,Style
 
 
 def read_adjacency_matrix(file_path):
@@ -48,8 +48,8 @@ def isomorphic(graph1, graph2):
 
 # Перевірка графів на ізоморфність (TRUE)
 print(f"{Fore.LIGHTCYAN_EX}Test #1")
-graph1 = read_adjacency_matrix('data_1(1)')
-graph2 = read_adjacency_matrix('data_1(2)')
+graph1 = read_adjacency_matrix('5_Lab/data_1(1)')
+graph2 = read_adjacency_matrix('5_Lab/data_1(2)')
 
 if isomorphic(graph1, graph2):
     print(f"{Fore.LIGHTGREEN_EX}Графи ізоморфні\n")
@@ -58,10 +58,10 @@ else:
 
 # Перевірка графів на ізоморфність (FALSE)
 print(f"{Fore.LIGHTCYAN_EX}Test #2")
-graph1 = read_adjacency_matrix('data_2(1)')
-graph2 = read_adjacency_matrix('data_2(2)')
+graph1 = read_adjacency_matrix('5_Lab/data_2(1)')
+graph2 = read_adjacency_matrix('5_Lab/data_2(2)')
 
 if isomorphic(graph1, graph2):
     print(f"{Fore.LIGHTGREEN_EX}Графи ізоморфні\n")
 else:
-    print(f"{Fore.LIGHTRED_EX}Графи неізоморфні\n")
+    print(f"{Fore.LIGHTRED_EX}Графи неізоморфні\n{Style.RESET_ALL}")

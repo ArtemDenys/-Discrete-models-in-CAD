@@ -1,4 +1,4 @@
-from colorama import Fore
+from colorama import Fore,Style
 
 class Graph:
     def __init__(self, vertices):
@@ -64,10 +64,10 @@ class Graph:
 
 if __name__ == "__main__":
     g = Graph(8)
-    g.read_from_file("data_1(1)")
+    g.read_from_file("1_Lab/data")
     result = g.kruskal()
-    print(f"\t{Fore.GREEN}Minimum Spanning Tree:")
+    print(f"\t{Fore.LIGHTGREEN_EX}Minimum Spanning Tree:")
     for u, v, weight in result:
         print(f"\t\t{chr(u + 65)}-{chr(v + 65)}: {weight}")
-    print(f"\tTotal weight of the Minimum Spanning Tree: {sum(weight for _, _, weight in result)}")
+    print(f"\tTotal weight of the Minimum Spanning Tree: {sum(weight for _, _, weight in result)}\n{Style.RESET_ALL}")
 
