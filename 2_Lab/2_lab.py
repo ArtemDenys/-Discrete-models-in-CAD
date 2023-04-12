@@ -1,3 +1,5 @@
+from colorama import Fore,Style
+
 def read_matrix_from_file(file_path):
     with open(file_path, 'r') as file:
         size = int(file.readline())
@@ -34,7 +36,7 @@ def add_edges(nodes):
 
 def find_postman_way(nodes, additional_edges):
     if not is_euler_graph(nodes):
-        print("Граф не є Ейлеровим. Розпочинається перебудова графа.")
+        print(f"{Fore.LIGHTRED_EX}Граф не є Ейлеровим.\n{Fore.LIGHTGREEN_EX}Розпочинається перебудова графа.")
         add_edges(nodes)
     find_way(nodes, additional_edges)
 
@@ -47,10 +49,10 @@ def find_way(nodes, additional_edges):
     way /= 2
     print(f"Шлях без повторень: {way}")
     way += sum([edge['length'] for edge in additional_edges])
-    print(f"Повний шлях: {way}")
+    print(f"Повний шлях: {way}{Style.RESET_ALL}\n")
 
 
-matrix = read_matrix_from_file('data')
+matrix = read_matrix_from_file('2_Lab/data')
 nodes = convert_matrix_to_dict(matrix)
 additional_edges = [{'id': 0, 'length': 27}, {'id': 1, 'length': 36}, {'id': 2, 'length': 16}]
 find_postman_way(nodes, additional_edges)

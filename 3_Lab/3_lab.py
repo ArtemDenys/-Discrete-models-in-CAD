@@ -1,7 +1,7 @@
 import itertools
-from colorama import Fore
+from colorama import Fore,Style
 
-with open("data", "r") as f:
+with open("3_Lab/data", "r") as f:
     num_vertices = int(f.readline())
     graph = []
     for i in range(num_vertices):
@@ -29,4 +29,4 @@ for path in itertools.permutations(range(num_vertices)):
         selected_options += 1
 print(f"{Fore.LIGHTGREEN_EX}\tКількість перербраних шляхів:", selected_options)
 print(f"\tКращий шлях:", tuple(v + 1 for v in best_path))
-print(f"\tМінімальний шлях:", min_distance)
+print(f"\tМінімальний шлях:", min_distance,Style.RESET_ALL,"\n")
