@@ -70,4 +70,3 @@ if __name__ == "__main__":
     for u, v, weight in result:
         print(f"\t\t{chr(u + 65)}-{chr(v + 65)}: {weight}")
     print(f"\tTotal weight of the Minimum Spanning Tree: {sum(weight for _, _, weight in result)}")
-
