@@ -64,7 +64,7 @@ class Graph:
 
 if __name__ == "__main__":
     g = Graph(8)
-    g.read_from_file("data")
+    g.read_from_file("data_1(1)")
     result = g.kruskal()
     print(f"\t{Fore.GREEN}Minimum Spanning Tree:")
     for u, v, weight in result:
